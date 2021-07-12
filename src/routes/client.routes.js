@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const clientController = require('../controllers/client.controller');
 
-// Retrieve all employees
+// Retrieve all client
 router.get('/', clientController.findAll);
 
 // Create a new client

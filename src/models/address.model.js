@@ -1,7 +1,7 @@
 'user strict';
 var dbConn = require('./../../config/db.config');
 
-//Employee object create
+//Address object create
 var Address = function (address) {
     this.longradouro = address.longradouro;
     this.numero = address.numero;

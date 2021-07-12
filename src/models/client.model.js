@@ -1,7 +1,7 @@
 'user strict';
 var dbConn = require('../../config/db.config');
 
-//Employee object create
+//Address object create
 var Client = function (client) {
     this.cnpj = client.cnpj;
     this.razao_social = client.razao_social;
@@ -44,11 +44,11 @@ Client.findAll = function (result) {
     });
 };
 Client.update = function (id, client, result) {
-    dbConn.query("UPDATE client SET first_name=?,last_name=?,email=?,phone=?,organization=?,designation=?,salary=? WHERE id = ?", [client.first_name, client.last_name, client.email, client.phone, client.organization, client.designation, client.salary, id], function (err, res) {
+dbConn.query("UPDATE client SET cnpj=?,razao_social=?,nome_do_contato=?,telefone=? WHERE id = ?", [client.cnpj, client.razao_social, client.nome_do_contato, client.telefone, id], function (err, res) {
         if (err) {
             console.log("error: ", err);
             result(null, err);
-        } else {
+        } else { 
             result(null, res);
         }
     });
